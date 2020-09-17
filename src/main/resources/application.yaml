@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/gportaldb
+    username: gportaluser
+    password: gportalpwd
+jwt:
+  secret: bcgytwf+
