@@ -191,7 +191,7 @@ private static final Logger log = LoggerFactory.getLogger(CompanyMasterService.c
 							.name(companyMaster.getName()).build();
 				if(index == 0) {
 					transactionResponseDTO.setTransactions(this.getTransactions(companyMaster));
-					transactionResponseDTO.setTotalBalance(CommonUtils.calculateTotalBalance(transactionResponseDTO.getTransactions()));
+					CommonUtils.calculateTotalBalance(transactionResponseDTO.getTransactions(), transactionResponseDTO);
 				}
 				txnList.add(transactionResponseDTO);
 				index++;
@@ -217,7 +217,7 @@ private static final Logger log = LoggerFactory.getLogger(CompanyMasterService.c
 		TransactionResponseDTO transactionResponseDTO = TransactionResponseDTO.builder().id(companyMaster.getId())
 				.name(companyMaster.getName()).build();
 		transactionResponseDTO.setTransactions(this.getTransactions(companyMaster));
-		transactionResponseDTO.setTotalBalance(CommonUtils.calculateTotalBalance(transactionResponseDTO.getTransactions()));
+		CommonUtils.calculateTotalBalance(transactionResponseDTO.getTransactions(), transactionResponseDTO);
 		transactionResponseDTO.setLastSaved(CommonUtils.getLastSavedDate(companyMaster.getAccountNameMaster()));
 		return transactionResponseDTO;
 	}

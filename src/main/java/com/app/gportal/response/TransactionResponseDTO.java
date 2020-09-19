@@ -27,6 +27,8 @@ public class TransactionResponseDTO implements Serializable{
 	private List<MasterResponseTransactions> transactions;
 	private String lastSaved;
 	private String currentDate;
-	private Double totalBalance;
+	private String totalBalance;
+	private String pnlTotal;
+	private String profitLossTotal;
 
 }

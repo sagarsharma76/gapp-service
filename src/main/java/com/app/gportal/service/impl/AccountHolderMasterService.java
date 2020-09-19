@@ -201,7 +201,7 @@ public class AccountHolderMasterService implements IAccountHolderMasterService {
 		TransactionResponseDTO transactionResponseDTO = TransactionResponseDTO.builder().id(accountHolderMaster.getId())
 				.name(accountHolderMaster.getName()).build();
 		transactionResponseDTO.setTransactions(this.getTransactions(accountHolderMaster));
-		transactionResponseDTO.setTotalBalance(CommonUtils.calculateTotalBalance(transactionResponseDTO.getTransactions()));
+		CommonUtils.calculateTotalBalance(transactionResponseDTO.getTransactions(), transactionResponseDTO);
 		transactionResponseDTO.setLastSaved(CommonUtils.getLastSavedDate(accountHolderMaster.getAccountNameMaster()));
 		return transactionResponseDTO;
 	}

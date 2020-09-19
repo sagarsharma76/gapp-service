@@ -7,13 +7,13 @@
     </appender>
      
     <appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>../logs/logs/gportal.log</file>
+        <file>./../logs/gportal.log</file>
         <encoder>
             <pattern>%d [%thread] %-5level %-50logger{40} - %msg%n</pattern>
         </encoder>
          
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>MyApp-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>./logs/gportal-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <maxFileSize>1MB</maxFileSize>
             <maxHistory>30</maxHistory>
             <totalSizeCap>10MB</totalSizeCap>
